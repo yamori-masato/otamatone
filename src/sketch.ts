@@ -10,7 +10,7 @@ const sketch = (p: p5) => {
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight)
-    otama = new Otamatone(p, p.width / 2, p.height / 2 + 100)
+    otama = new Otamatone(p, p.width / 2, p.height / 2 + 180)
     shifter = new Tone.PitchShift(2).toDestination()
     synth = new Tone.Synth().connect(shifter)
     Tone.now()
@@ -35,6 +35,15 @@ const sketch = (p: p5) => {
         flag = false
         synth.triggerRelease()
       }
+    }
+  }
+
+  p.mousePressed = () => {
+    // https://github.com/Tonejs/Tone.js/issues/341
+    if (Tone.context.state !== 'running') {
+      Tone.context.resume().then(() => {
+        Tone.Transport.start()
+      })
     }
   }
 }
