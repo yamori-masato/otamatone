@@ -121,7 +121,7 @@ class Neck implements P5Obj {
   update(x: number, y: number) {
     const [ax, ay] = [this.x + x, this.y + y]
     // 当たり判定
-    const paddingX = 30
+    const paddingX = 100
     const cx1 = ax - this.width/2 - paddingX
     const cy1 = ay - this.height/2
     const cx2 = cx1 + this.width + paddingX * 2
