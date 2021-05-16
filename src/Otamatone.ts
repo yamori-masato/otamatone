@@ -156,7 +156,7 @@ class Neck implements P5Obj {
   @pushPopDecorator
   private drawJoint() {
     const centerY = this.height / 2 - this.short / 2
-    this.p.rect(0, centerY, this.width, this.short)    
+    this.p.rect(0, centerY, this.width, this.short + 5)
   }
 
   @pushPopDecorator
