@@ -4,7 +4,7 @@ module.exports = {
     bundle: './src/index.ts',
   },
   output: {
-    path: path.join(__dirname, 'docs'),
+    path: path.join(__dirname, 'demo'),
     filename: '[name].js',
   },
   resolve: {
@@ -12,7 +12,7 @@ module.exports = {
   },
   devServer: {
     host: '0.0.0.0',
-    contentBase: path.join(__dirname, 'docs'),
+    contentBase: path.join(__dirname, 'demo'),
     open: true,
   },
   module: {
